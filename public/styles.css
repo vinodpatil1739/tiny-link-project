@@ -1,0 +1,9 @@
+/* public/styles.css */
+/* Truncate long URLs with ellipsis */
+.truncate-url {
+    max-width: 300px; /* Adjust as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}

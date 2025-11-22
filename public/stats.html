@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Statistics</title>
+    
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="mb-8 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-gray-900">📊 Link Statistics</h1>
+            <a href="/" class="text-blue-600 hover:underline">← Back to Dashboard</a>
+        </header>
+
+        <section id="loading-state" class="text-center p-10">
+            <p class="text-xl text-gray-500 font-medium">Loading link details...</p>
+        </section>
+
+        <section id="error-state" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative hidden">
+            <p id="error-message" class="font-bold">Error Loading Link</p>
+            <p class="text-sm">The requested short code could not be found or a server error occurred.</p>
+        </section>
+
+        <div id="stats-container" class="bg-white shadow-xl rounded-lg p-8 hidden">
+            <h2 class="text-4xl font-extrabold text-blue-600 mb-4">
+                /<span id="stat-short-code"></span>
+            </h2>
+            <div class="space-y-6">
+                
+                <div class="border-b pb-4">
+                    <p class="text-gray-500 text-sm uppercase font-semibold">Target URL</p>
+                    <p id="stat-target-url" class="text-lg text-gray-800 break-all"></p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-semibold">Total Clicks</p>
+                        <p id="stat-total-clicks" class="text-3xl font-bold text-gray-900"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-semibold">Created At</p>
+                        <p id="stat-created-at" class="text-lg text-gray-800"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-semibold">Last Clicked</p>
+                        <p id="stat-last-clicked" class="text-lg text-gray-800"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="stats.js"></script>
+</body>
+</html>
