@@ -1,6 +1,6 @@
-// public/stats.js
 
-/**
+
+/*
  * Formats a timestamp into a readable string or returns N/A if null.
  * @param {string | null} timestamp 
  * @returns {string}
@@ -16,7 +16,7 @@ const formatTimestamp = (timestamp) => {
     }).format(new Date(timestamp));
 };
 
-/**
+/*
  * Renders the fetched link data onto the stats page and handles visibility of states.
  * @param {Object} data 
  */
@@ -30,7 +30,7 @@ const renderStats = (data) => {
     document.getElementById('stats-container').classList.remove('hidden');
 };
 
-/**
+/*
  * Fetches the statistics for a given short code using the backend API.
  * @param {string} code 
  */
@@ -68,7 +68,7 @@ const fetchStats = async (code) => {
     }
 };
 
-/**
+/*
  * Initialization: Extracts the code from the URL and starts the fetch.
  */
 document.addEventListener('DOMContentLoaded', () => {

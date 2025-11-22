@@ -1,5 +1,3 @@
-// server.js
-
 // === Dependencies and Setup ===
 // 1. Load environment variables from .env file
 require('dotenv').config(); 
@@ -44,12 +42,12 @@ pool.on('error', (err, client) => {
 });
 
 
-// ===================================
+
 // CORE APPLICATION ROUTES (Pages & Redirect)
-// ===================================
+
 
 // === Redirect Route: /:code (302 Redirect) ===
-/**
+/*
  * Visiting /{code} performs an HTTP 302 redirect to the original URL.
  * [cite_start]Each redirect increments the total-click count and updates the "last clicked" time. [cite: 25, 26]
  * [cite_start]Returns 404 if link not found. [cite: 29]
@@ -87,7 +85,7 @@ app.get('/:code', async (req, res) => {
 });
 
 // === Stats Page Route: /code/:code ===
-/**
+/*
  * [cite_start]Serves the static stats.html page for the client-side JavaScript to render the stats. [cite: 39]
  */
 app.get('/code/:code', (req, res) => {
@@ -97,7 +95,7 @@ app.get('/code/:code', (req, res) => {
 
 
 // === Healthcheck Route: GET /healthz ===
-/**
+/*
  * [cite_start]Returns status 200 with system details. [cite: 66]
  */
 app.get('/healthz', (req, res) => {
@@ -110,12 +108,12 @@ app.get('/healthz', (req, res) => {
 });
 
 
-// ===================================
+
 // API Endpoints: /api/links
-// ===================================
+
 
 // === API 1: POST /api/links (Create link) ===
-/**
+/*
  * [cite_start]Create link[cite: 70]. [cite_start]Returns 409 if code exists[cite: 70].
  */
 app.post('/api/links', async (req, res) => {
@@ -160,7 +158,7 @@ app.post('/api/links', async (req, res) => {
 });
 
 // === API 2: GET /api/links (List all links) ===
-/**
+/*
  * [cite_start]List all links[cite: 70].
  */
 app.get('/api/links', async (req, res) => {
@@ -186,7 +184,7 @@ app.get('/api/links', async (req, res) => {
 });
 
 // === API 3: GET /api/links/:code (Stats for one code) ===
-/**
+/*
  * [cite_start]Stats for one code[cite: 70].
  */
 app.get('/api/links/:code', async (req, res) => {
@@ -218,7 +216,7 @@ app.get('/api/links/:code', async (req, res) => {
 });
 
 // === API 4: DELETE /api/links/:code (Delete link) ===
-/**
+/*
  * [cite_start]Delete link[cite: 70]. [cite_start]After deletion, /{code} must return 404 and no longer redirect. [cite: 29]
  */
 app.delete('/api/links/:code', async (req, res) => {

@@ -2,7 +2,7 @@
 
 // === Utility Functions ===
 
-/**
+/*
  * Formats a timestamp into a readable string or returns N/A if null.
  * @param {string | null} timestamp 
  * @returns {string}
@@ -36,7 +36,7 @@ const showMessage = (message, isError = false) => {
 
 // === Rendering Functions ===
 
-/**
+/*
  * Creates a table row element (<tr>) for a single link object.
  */
 const createLinkRow = (link) => {
@@ -69,7 +69,7 @@ const createLinkRow = (link) => {
     return row;
 };
 
-/**
+/*
  * Fetches all links and updates the dashboard table, showing empty/loading states.
  */
 const fetchAndRenderLinks = async () => {
