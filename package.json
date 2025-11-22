@@ -7,8 +7,8 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     
-    "build:css": "tailwindcss -i ./input.css -o ./public/styles.css --minify",
-    "build": "npm install && npm run build:css" 
+    "build:css": "npx tailwindcss -i ./input.css -o ./public/styles.css --minify",
+    "build": "npm run build:css" 
   },
   "keywords": [
     "express",
